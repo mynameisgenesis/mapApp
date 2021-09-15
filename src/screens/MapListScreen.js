@@ -55,7 +55,10 @@ const MapListScreen = ({ navigation }) => {
             return (
               <TouchableOpacity
                 onPress={() =>
-                  navigation.navigate("MapDetail", { _id: item.id })
+                  navigation.navigate("MapDetail", {
+                    _id: item.id,
+                    _title: item.title,
+                  })
                 }
               >
                 <ListItem bottomDivider key={item.id}>
