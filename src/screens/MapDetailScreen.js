@@ -1,5 +1,10 @@
 import React from "react";
-import { Text, StyleSheet, Dimensions } from "react-native";
+import { Text, StyleSheet, Dimensions, ScrollView, Image } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import Spacer from "../components/Spacer";
+
+const width = Dimensions.get("window").width;
+const height = Dimensions.get("window").height / 2;
 
 const MapDetailScreen = ({ navigation }) => {
   const _id = navigation.getParam("_id");
@@ -11,9 +16,45 @@ const MapDetailScreen = ({ navigation }) => {
 
   return (
     <>
-      <Text style={{ fontSize: 48 }}>{_title}</Text>
+      <SafeAreaView style={styles.container} forceInset={{ top: "always" }}>
+        <ScrollView scrollEnabled={true}>
+          <Image
+            style={styles.image}
+            source={require("../../assets/MatoGrosso.png")}
+          />
+          <Spacer>
+            <Text style={styles.title}>Description</Text>
+          </Spacer>
+          <Spacer>
+            <Text style={styles.detail}>Region: Midwest</Text>
+            <Text style={styles.detail}>Capital: Cuiaba</Text>
+            <Text style={styles.detail}>Area: 903,357 km2</Text>
+            <Text style={styles.detail}>Population: 3,035,122</Text>
+            <Text style={styles.detail}>
+              Border: Amazonas, Pará, Tocantins, Goiás, Mato Grosso do Sul,
+              Rondônia, Bolivia
+            </Text>
+          </Spacer>
+        </ScrollView>
+      </SafeAreaView>
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  image: {
+    width,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  detail: {
+    fontSize: 16,
+  },
+});
 
 export default MapDetailScreen;

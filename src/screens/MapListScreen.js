@@ -25,16 +25,16 @@ const response = [
     title: "Rio de Janeiro",
     image: require("../../assets/RioDeJaniero.png"),
   },
-  // {
-  //   id: "5",
-  //   title: "Ceará",
-  //   image: require("../../assets/Ceará.svg"),
-  // },
-  // {
-  //   id: "6",
-  //   title: "Rio Grande do Sul",
-  //   image: require("../../assets/RioGrandeDoSul.svg"),
-  // },
+  {
+    id: "5",
+    title: "Ceará",
+    image: require("../../assets/Ceará.png"),
+  },
+  {
+    id: "6",
+    title: "Rio Grande do Sul",
+    image: require("../../assets/RioGrandeDoSul.png"),
+  },
   {
     id: "7",
     title: "Acre",
@@ -78,6 +78,7 @@ const MapListScreen = ({ navigation }) => {
 };
 
 MapListScreen.navigationOptions = {
+  title: "States",
   tabBarIcon: ({ tintColor }) => (
     <Icon name="ios-list" color={tintColor} size={30} />
   ),
