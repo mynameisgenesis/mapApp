@@ -1,8 +1,16 @@
-import React from "react";
-import MapView from "react-native-maps";
-import { StyleSheet, Dimensions, Image } from "react-native";
+import React, { useEffect, useState } from "react";
+import MapView, { Marker } from "react-native-maps";
+import {
+  StyleSheet,
+  Dimensions,
+  Image,
+  View,
+  Text,
+  TouchableWithoutFeedback,
+} from "react-native";
 
 const height = Dimensions.get("window").height;
+const width = Dimensions.get("window").width;
 
 const response = [
   {
@@ -84,34 +92,106 @@ const response = [
 ];
 
 const Map = () => {
+  const [spot, setSpot] = useState(1);
+  const [visible, setVisible] = useState(false);
+
+  const showCard = (event) => {
+    setSpot(event._targetInst.return.key);
+    setVisible(true);
+  };
+
   return (
-    <MapView
-      style={styles.map}
-      loadingEnabled={true}
-      region={{
-        latitude: -15.59611,
-        longitude: -56.09667,
-        latitudeDelta: 70,
-        longitudeDelta: 1,
-      }}
-    >
-      {response.map((marker) => (
-        <MapView.Marker
-          key={marker.id}
-          coordinate={marker.coordinates}
-          title={marker.title}
-          description={marker.description}
+    <>
+      <MapView
+        style={styles.map}
+        loadingEnabled={true}
+        region={{
+          latitude: -15.59611,
+          longitude: -56.09667,
+          latitudeDelta: 70,
+          longitudeDelta: 1,
+        }}
+      >
+        {response.map((marker) => (
+          <Marker
+            key={marker.id}
+            identifier={marker.id}
+            coordinate={marker.coordinates}
+            title={marker.title}
+            description={marker.description}
+            onSelect={(event) => {
+              setSpot(event._targetInst.return.key);
+              setVisible(true);
+            }}
+            onDeselect={(event) => {
+              setVisible(false);
+            }}
+          >
+            <Image source={marker.icon} style={{ height: 32, width: 32 }} />
+          </Marker>
+        ))}
+      </MapView>
+      {spot && visible ? (
+        <TouchableWithoutFeedback
+          onPress={() => {
+            setVisible(true);
+          }}
         >
-          <Image source={marker.icon} style={{ height: 32, width: 32 }} />
-        </MapView.Marker>
-      ))}
-    </MapView>
+          <View style={styles.card}>
+            <Image
+              style={styles.image}
+              source={require("../../assets/MatoGrosso.png")}
+            />
+            <Text style={styles.description}>Mato Grosso</Text>
+            <Text style={styles.descriptionDetail}>Region: Midwest</Text>
+            <Text style={styles.descriptionCapital}>Capital: Cuiabá</Text>
+          </View>
+        </TouchableWithoutFeedback>
+      ) : (
+        <View />
+      )}
+    </>
   );
 };
 
 const styles = StyleSheet.create({
   map: {
     height,
+  },
+  card: {
+    backgroundColor: "#fff",
+    height: 90,
+    width: width - 20,
+    position: "absolute",
+    overflow: "hidden",
+    margin: 10,
+    bottom: 100,
+    shadowRadius: 20,
+    borderRadius: 8,
+    padding: 10,
+    elevation: 20,
+  },
+  image: {
+    height: 70,
+    width: 100,
+  },
+  description: {
+    position: "absolute",
+    paddingLeft: width / 2 - 20,
+    paddingTop: 10,
+    textAlign: "center",
+    fontWeight: "bold",
+    fontSize: 20,
+  },
+  descriptionDetail: {
+    position: "absolute",
+    paddingLeft: width / 2 - 10,
+    paddingTop: 38,
+  },
+  descriptionCapital: {
+    position: "absolute",
+    paddingLeft: width / 2 - 10,
+    paddingTop: 58,
   },
 });
 
