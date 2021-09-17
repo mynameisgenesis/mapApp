@@ -1,7 +1,8 @@
 {
   "expo": {
     "name": "mapApp",
-    "slug": "mapApp",
+    "slug": "MapApp",
+    "owner": "geni92",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -27,6 +28,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "This was created by following Luciana Sato's tutorial on youtube and their website. It was really helpful and easy to follow. However, some things did not work for me the way it did for them so I had to change some things but it might have been because I was working one with iOS. Anyway, I hope you find this useful and thank you Luciana if you read this!",
+    "githubUrl": "https://github.com/mynameisgenesis/mapApp"
   }
 }
