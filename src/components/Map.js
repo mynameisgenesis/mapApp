@@ -16,76 +16,76 @@ const response = [
   {
     id: "1",
     coordinates: {
-      latitude: -15.59611,
-      longitude: -56.09667,
+      latitude: 34.048927,
+      longitude: -111.093735,
     },
-    title: "Cuiabá",
-    description: "Cuiabá",
+    title: "Arizona",
+    description: "Arizona",
     icon: require("../../assets/location-pin.png"),
   },
   {
     id: "2",
     coordinates: {
-      latitude: -20.44278,
-      longitude: -54.64639,
+      latitude: 39.113014,
+      longitude: -105.358887,
     },
-    title: "Campo Grande",
-    description: "Campo Grande",
+    title: "Colorado",
+    description: "Colorado",
     category: 1,
     icon: require("../../assets/location-pin.png"),
   },
   {
     id: "3",
     coordinates: {
-      latitude: -23.5489,
-      longitude: -46.6388,
+      latitude: 39.876019,
+      longitude: -117.224121,
     },
-    title: "São Paulo",
-    description: "São Paulo",
+    title: "Nevada",
+    description: "Nevada",
     category: 1,
     icon: require("../../assets/location-pin.png"),
   },
   {
     id: "4",
     coordinates: {
-      latitude: -22.9035,
-      longitude: -43.2096,
+      latitude: 43.0,
+      longitude: -75.0,
     },
-    title: "Rio de Janeiro",
-    description: "Rio de Janeiro",
+    title: "New York",
+    description: "New York",
     category: 1,
     icon: require("../../assets/location-pin.png"),
   },
   {
     id: "5",
     coordinates: {
-      latitude: -3.71839,
-      longitude: -38.5434,
+      latitude: 41.203323,
+      longitude: -77.194527,
     },
-    title: "Ceará",
-    description: "Ceará",
+    title: "Pennsylvania",
+    description: "Pennsylvania",
     category: 1,
     icon: require("../../assets/location-pin.png"),
   },
   {
     id: "6",
     coordinates: {
-      latitude: -30.0277,
-      longitude: -51.2287,
+      latitude: 42.032974,
+      longitude: -93.581543,
     },
-    title: "Rio Grande do Sul",
-    description: "Rio Grande do Sul",
+    title: "Iowa",
+    description: "Iowa",
     category: 1,
     icon: require("../../assets/location-pin.png"),
   },
   {
     id: "7",
     coordinates: {
-      latitude: -9.974,
-      longitude: -67.8076,
+      latitude: 35.860119,
+      longitude: -86.660156,
     },
-    title: "Acre",
-    description: "Acred",
+    title: "Tennessee",
+    description: "Tennessee",
     category: 1,
     icon: require("../../assets/location-pin.png"),
   },
@@ -106,8 +106,8 @@ const Map = () => {
         style={styles.map}
         loadingEnabled={true}
         region={{
-          latitude: -15.59611,
-          longitude: -56.09667,
+          latitude: 37.6,
+          longitude: -95.665,
           latitudeDelta: 70,
           longitudeDelta: 1,
         }}
@@ -140,11 +140,11 @@ const Map = () => {
           <View style={styles.card}>
             <Image
               style={styles.image}
-              source={require("../../assets/MatoGrosso.png")}
+              source={require("../../assets/arizona-flag.png")}
             />
-            <Text style={styles.description}>Mato Grosso</Text>
-            <Text style={styles.descriptionDetail}>Region: Midwest</Text>
-            <Text style={styles.descriptionCapital}>Capital: Cuiabá</Text>
+            <Text style={styles.description}>Arizona</Text>
+            <Text style={styles.descriptionDetail}>Region: Southwest</Text>
+            <Text style={styles.descriptionCapital}>Capital: Phoenix</Text>
           </View>
         </TouchableWithoutFeedback>
       ) : (

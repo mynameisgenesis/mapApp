@@ -7,38 +7,38 @@ import { ListItem, Avatar } from "react-native-elements";
 const response = [
   {
     id: "1",
-    title: "Cuiabá",
-    image: require("../../assets/Cuiaba.png"),
+    title: "Arizona",
+    image: require("../../assets/arizona-flag.png"),
   },
   {
     id: "2",
-    title: "Campo Grande",
-    image: require("../../assets/CampoGrande.jpeg"),
+    title: "Colorado",
+    image: require("../../assets/colorado-flag.png"),
   },
   {
     id: "3",
-    title: "São Paulo",
-    image: require("../../assets/SãoPaulo.png"),
+    title: "Nevada",
+    image: require("../../assets/nevada-flag.png"),
   },
   {
     id: "4",
-    title: "Rio de Janeiro",
-    image: require("../../assets/RioDeJaniero.png"),
+    title: "New York",
+    image: require("../../assets/new-york-flag.png"),
   },
   {
     id: "5",
-    title: "Ceará",
-    image: require("../../assets/Ceará.png"),
+    title: "Pennsylvania",
+    image: require("../../assets/pennsylvania-flag.png"),
   },
   {
     id: "6",
-    title: "Rio Grande do Sul",
-    image: require("../../assets/RioGrandeDoSul.png"),
+    title: "Iowa",
+    image: require("../../assets/iowa-flag.png"),
   },
   {
     id: "7",
-    title: "Acre",
-    image: require("../../assets/Acre.png"),
+    title: "Tennessee",
+    image: require("../../assets/tennessee-flag.png"),
   },
 ];
 
@@ -90,8 +90,8 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   avatar: {
-    height: 50,
-    width: 50,
+    height: 65,
+    width: 100,
   },
 });
 

@@ -20,19 +20,18 @@ const MapDetailScreen = ({ navigation }) => {
         <ScrollView scrollEnabled={true}>
           <Image
             style={styles.image}
-            source={require("../../assets/MatoGrosso.png")}
+            source={require("../../assets/arizona-flag.png")}
           />
           <Spacer>
             <Text style={styles.title}>Description</Text>
           </Spacer>
           <Spacer>
-            <Text style={styles.detail}>Region: Midwest</Text>
-            <Text style={styles.detail}>Capital: Cuiaba</Text>
-            <Text style={styles.detail}>Area: 903,357 km2</Text>
-            <Text style={styles.detail}>Population: 3,035,122</Text>
+            <Text style={styles.detail}>Region: Southwest</Text>
+            <Text style={styles.detail}>Capital: Phoenix</Text>
+            <Text style={styles.detail}>Area: 113,998 mi²</Text>
+            <Text style={styles.detail}>Population: 7.279 million</Text>
             <Text style={styles.detail}>
-              Border: Amazonas, Pará, Tocantins, Goiás, Mato Grosso do Sul,
-              Rondônia, Bolivia
+              Border: Colorado, Utah, New Mexico, Texas, California, Mexico
             </Text>
           </Spacer>
         </ScrollView>
